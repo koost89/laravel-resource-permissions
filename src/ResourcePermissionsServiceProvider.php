@@ -2,9 +2,9 @@
 
 namespace Divel\ResourcePermissions;
 
+use Divel\ResourcePermissions\Commands\ResourcePermissionsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Divel\ResourcePermissions\Commands\ResourcePermissionsCommand;
 
 class ResourcePermissionsServiceProvider extends PackageServiceProvider
 {
