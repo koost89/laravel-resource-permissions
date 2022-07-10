@@ -15,7 +15,6 @@ it('can append the permissions to a resource', function () {
 });
 
 it('can append the permissions to a anonymous resource collection', function () {
-
     $resource = UserResource::collection(User::factory()->count(2)->make())
         ->appendResourcePermissions(['view']);
 
@@ -27,7 +26,6 @@ it('can append the permissions to a anonymous resource collection', function () 
 });
 
 it('can append the permissions to a specific resource collection', function () {
-
     $resource = UserResourceCollection::make(User::factory()->count(2)->make())
         ->appendResourcePermissions(['view']);
 

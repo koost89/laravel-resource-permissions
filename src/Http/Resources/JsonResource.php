@@ -11,8 +11,7 @@ class JsonResource extends \Illuminate\Http\Resources\Json\JsonResource
     public function toArray($request): array
     {
         $permissions = [
-            config('resource-permissions.permission_key', 'can') =>
-                $this->when($this->hasResourcePermissionsToAppend, $this->handleGateChecks()),
+            config('resource-permissions.permission_key', 'can') => $this->when($this->hasResourcePermissionsToAppend, $this->handleGateChecks()),
         ];
 
         if (config('resource-permissions.return_resource_array', false)) {
