@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # A Laravel package which adds permissions to your JsonResource classes for easy frontend use
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/divel/laravel-resource-permissions.svg?style=flat-square)](https://packagist.org/packages/divel/laravel-resource-permissions)
