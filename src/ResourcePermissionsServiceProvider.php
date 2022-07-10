@@ -2,7 +2,8 @@
 
 namespace Divel\ResourcePermissions;
 
-use Divel\ResourcePermissions\Commands\ResourcePermissionsCommand;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -10,16 +11,25 @@ class ResourcePermissionsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('laravel-resource-permissions')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-resource-permissions_table')
-            ->hasCommand(ResourcePermissionsCommand::class);
+            ->hasConfigFile();
+
+        $this->defineMacros();
+    }
+
+    protected function defineMacros(): void
+    {
+        JsonResource::macro('appendResourcePermissions', function (array $permissions = []) {
+            if ($this instanceof ResourceCollection) {
+                $this->collection->each->appendResourcePermissions($permissions);
+
+                return $this;
+            }
+
+            $this->resource->appendResourcePermissions($permissions);
+
+            return $this;
+        });
     }
 }
