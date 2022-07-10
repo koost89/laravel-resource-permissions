@@ -2,9 +2,9 @@
 
 namespace Divel\ResourcePermissions\Tests;
 
+use Divel\ResourcePermissions\ResourcePermissionsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Divel\ResourcePermissions\ResourcePermissionsServiceProvider;
 
 class TestCase extends Orchestra
 {
