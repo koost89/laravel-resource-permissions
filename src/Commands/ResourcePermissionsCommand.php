@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Divel\ResourcePermissions\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ResourcePermissionsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-resource-permissions';
 
     public $description = 'My command';
 
