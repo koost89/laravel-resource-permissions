@@ -2,7 +2,7 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
-    level: 4
+    level: 6
     paths:
         - src
         - config
@@ -11,3 +11,6 @@ parameters:
     checkModelProperties: true
     checkMissingIterableValueType: false
 
+    ignoreErrors:
+        - '#Instanceof between \$this\(Divel\\ResourcePermissions\\ResourcePermissionsServiceProvider\) and Illuminate\\Http\\Resources\\Json\\ResourceCollection will always evaluate to false.#'
+        - '#Access to an undefined property Divel\\ResourcePermissions\\ResourcePermissionsServiceProvider::\$resource.#'
